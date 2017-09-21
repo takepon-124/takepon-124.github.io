@@ -1,0 +1,119 @@
+@import "compass";
+@import url(https://fonts.googleapis.com/css?family=Abel);
+// font-family
+$baseFontFamily :"游ゴシック", YuGothic, "メイリオ",Verdana, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+
+// colors
+$baseColor: silver;
+$subColor: skyblue;
+$keyColor: orange;
+$fontColor: black;
+
+
+/* Base
+------------------------------------------------------------*/
+html{ font-size: 62.5%; }
+
+body{
+  color: $fontColor;
+  font-size: 1.4rem;
+  font-family:$baseFontFamily;
+  line-height:1.6;
+  letter-spacing: 0.1em; 
+  background-color: $baseColor;
+}
+
+/* Align
+------------------------------------------------------------*/
+.text-center {
+  text-align: center;
+}
+
+/* Layout
+------------------------------------------------------------*/
+.block-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Font
+------------------------------------------------------------*/
+.abel {
+  font-family: 'Abel', sans-serif;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+
+.picture {
+  background-image:url("../images/img_profile.jpg");
+  height: 500px;
+  max-width: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+// Common Styles
+section {
+  padding: 60px 0;
+  .container {
+    width: 100%;
+    @extend .block-center;
+  }
+  h1 {
+    font-size: 3.2rem;
+  }
+}
+// showcase
+#showcase {
+  .container {
+    background-color: $subColor;
+    display: flex;
+    flex-direction: row;
+  }
+    h2 {
+    color: $fontColor;
+    background-color: $keyColor;
+  }
+  .box {
+    background-color: $baseColor;
+    margin: 30px;
+    width: 30%;
+    height: 150px;
+    flex: 1;
+  }
+}
+#showcase2 {
+  background-color: $baseColor;
+  @mixin button($color: $keyColor){
+    color: $fontColor;
+    background-color: $color;
+    width: 30%;
+    margin: 0 35%;
+  }
+  h2 {
+    @include button;
+  }
+  .button {
+    display: block;
+    @include button(red); 
+    }
+}
+@media (max-width: 768px) {
+  .picture{
+    height: 250px;
+  }
+  #showcase {
+    .box{
+      width: 100%;
+      margin: 0 0 30px;
+    }
+    .container {
+      box-sizing:border-box;
+      padding: 30px;
+      flex-direction: column;
+    }
+  }
+}
