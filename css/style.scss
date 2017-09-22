@@ -98,6 +98,7 @@ section {
   }
   .button {
     display: block;
+    border-radius: 4px;
     @include button(red); 
     }
 }

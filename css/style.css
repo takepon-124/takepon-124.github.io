@@ -70,6 +70,7 @@ section {
     margin: 0 35%; }
   #showcase2 .button {
     display: block;
+    border-radius: 4px;
     color: black;
     background-color: red;
     width: 30%;
